@@ -5,11 +5,10 @@ import 'package:provider/provider.dart';
 import 'main_model.dart';
 
 void main() {
-  runApp( MyApp() );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,30 +20,28 @@ class MyApp extends StatelessWidget {
             title: Text('Book管理アプリ'),
           ),
           body: Consumer<MainModel>(builder: (context, model, child) {
-              return Center(
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                        model.name,
-                        style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
+            return Center(
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    model.name,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
-                    RaisedButton(
+                  ),
+                  RaisedButton(
                       child: Text('押して！'),
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => BookList()),
                         );
-                      }
-                    ),
-                  ],
-                ),
-              );
-            }
-          ),
+                      }),
+                ],
+              ),
+            );
+          }),
         ),
       ),
     );
