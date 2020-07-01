@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:kboy/booklist.dart';
+import 'package:kboy/booklist/booklist.dart';
 import 'package:provider/provider.dart';
 import 'main_model.dart';
 
@@ -31,13 +31,16 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   RaisedButton(
-                      child: Text('押して！'),
+                      child: Text('Push'),
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => BookList()),
                         );
                       }),
+                  IconButton(
+                    icon: Icon(Icons.add_shopping_cart),
+                  )
                 ],
               ),
             );

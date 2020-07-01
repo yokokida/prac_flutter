@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:kboy/booklist_model.dart';
+import 'package:kboy/booklist/booklist_model.dart';
+import 'package:kboy/presentation/add_book_page.dart';
 import 'package:provider/provider.dart';
 
 class BookList extends StatelessWidget {
@@ -22,6 +23,18 @@ class BookList extends StatelessWidget {
                 .toList();
             return ListView(
               children: listTiles,
+            );
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddBookPage(),
+                fullscreenDialog: true,
+              ),
             );
           },
         ),
